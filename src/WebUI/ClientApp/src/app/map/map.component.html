@@ -1,0 +1,8 @@
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng" (markerClick)="selectMarker($event)"></agm-marker>
+</agm-map>
+      
+<div *ngIf="selectedMarker" class="bg-info" style="text-align: center">
+  Latitude: {{ selectedMarker.lat }} Longitude: {{ selectedMarker.lng }}
+</div>
+    

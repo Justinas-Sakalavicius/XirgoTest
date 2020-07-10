@@ -1,0 +1,9 @@
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\bin\Debug\netstandard2.1\XirgoTest.Domain.deps.json
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\bin\Debug\netstandard2.1\XirgoTest.Domain.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\bin\Debug\netstandard2.1\XirgoTest.Domain.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfoInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\Domain.AssemblyInfo.cs
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\XirgoTest.Domain.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\XirgoTest.Domain.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Domain\obj\Debug\netstandard2.1\Domain.csprojAssemblyReference.cache

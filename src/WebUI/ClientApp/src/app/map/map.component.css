@@ -1,0 +1,17 @@
+agm-map { 
+    height: 600px; 
+    width: 100%; 
+}
+
+.main {
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#map {
+    height: 300px; /* like this */
+    width: 500px;
+}
