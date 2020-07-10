@@ -1,0 +1,12 @@
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\bin\Release\netstandard2.1\XirgoTest.Application.deps.json
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\bin\Release\netstandard2.1\XirgoTest.Application.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\bin\Release\netstandard2.1\XirgoTest.Application.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\bin\Release\netstandard2.1\XirgoTest.Domain.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\bin\Release\netstandard2.1\XirgoTest.Domain.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\Application.csprojAssemblyReference.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\Application.AssemblyInfoInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\Application.AssemblyInfo.cs
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\Application.csproj.CoreCompileInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\Application.csproj.CopyComplete
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\XirgoTest.Application.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Application\obj\Release\netstandard2.1\XirgoTest.Application.pdb

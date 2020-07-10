@@ -1,0 +1,14 @@
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Infrastructure.deps.json
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Infrastructure.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Infrastructure.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Application.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Domain.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Application.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\bin\relesase\netcoreapp3.1\XirgoTest.Domain.pdb
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\Infrastructure.csprojAssemblyReference.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\Infrastructure.AssemblyInfo.cs
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\Infrastructure.csproj.CopyComplete
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\XirgoTest.Infrastructure.dll
+C:\Users\Justinas\source\repos\XirgoTest\src\Infrastructure\obj\relesase\netcoreapp3.1\XirgoTest.Infrastructure.pdb
