@@ -28,9 +28,9 @@ Use these instructions to get the project up and running.
 <p>Once the front end has started, within the \Src\WebUI directory, launch the back end by running:</p>
 
 5. dotnet run
-6. Launch https://localhost:44376/ in your browser to view the Web UI
+6. Launch https://localhost:44320/ in your browser to view the Web UI
 
-6. Launch https://localhost:44376/api in your browser to view the API
+6. Launch https://localhost:44320/api in your browser to view the API
 
 <h4>License</h4>
 This project is licensed with the MIT license.
