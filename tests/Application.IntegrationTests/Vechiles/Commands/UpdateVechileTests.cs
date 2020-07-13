@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using XirgoTest.Application.Common.Exceptions;
-using XirgoTest.Application.Vechiles.CreateVechile;
-using XirgoTest.Application.Vechiles.UpdateVechile;
+using XirgoTest.Application.Vehicles.Commands.CreateVehicle;
+using XirgoTest.Application.Vehicles.Commands.UpdateVehicle;
 using XirgoTest.Domain.Entities;
 
 namespace Application.IntegrationTests.Vechiles.Commands
@@ -18,7 +18,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public void ShouldRequireValidVechileId()
         {
-            var command = new UpdateVechileCommand
+            var command = new UpdateVehicleCommand
             {
                 Id = 99,
                 LicensePlate = "CCO056",
@@ -34,7 +34,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public async Task ShouldRequireUniqueLicensePlate()
         {
-            var vechileId = await SendAsync(new CreateVechileCommand
+            var vechileId = await SendAsync(new CreateVehicleCommand
             {
                 LicensePlate = "CCO056",
                 BrandName = "Opel",
@@ -42,7 +42,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
                 Color = "Green"
             });
 
-            await SendAsync(new CreateVechileCommand
+            await SendAsync(new CreateVehicleCommand
             {
                 LicensePlate = "AAA000",
                 BrandName = "VW",
@@ -50,7 +50,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
                 Color = "Silver"
             });
 
-            var command = new UpdateVechileCommand
+            var command = new UpdateVehicleCommand
             {
                 Id = vechileId,
                 LicensePlate = "AAA000",
@@ -68,7 +68,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public async Task ShouldUpdateVechile()
         {
-            var vechileId = await SendAsync(new CreateVechileCommand
+            var vechileId = await SendAsync(new CreateVehicleCommand
             {
                 LicensePlate = "AAA000",
                 BrandName = "VW",
@@ -76,7 +76,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
                 Color = "Silver"
             });
 
-            var command = new UpdateVechileCommand
+            var command = new UpdateVehicleCommand
             {
                 Id = vechileId,
                 LicensePlate = "CCO056",
@@ -87,7 +87,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
 
             await SendAsync(command);
 
-            var list = await FindAsync<Vechile>(vechileId);
+            var list = await FindAsync<Vehicle>(vechileId);
 
             list.LicensePlate.Should().Be(command.LicensePlate);
             list.BrandName.Should().Be(command.BrandName);

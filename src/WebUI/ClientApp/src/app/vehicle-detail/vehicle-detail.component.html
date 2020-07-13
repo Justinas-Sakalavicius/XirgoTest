@@ -1,0 +1,27 @@
+
+<div>
+    <h4 class="title"> {{vehicleVm.vehicle.brandName}} {{vehicleVm.vehicle.modelName}} Details</h4>
+</div>
+<div>
+  <p>Click on the record row below to check location on the map!</p>
+</div>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th>Latitude</th>
+          <th>Longitude</th>
+          <th>Speed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of detailsVm.vehicleDetails" (click)="vehicleDetailsMap(item.latitude, item.longitude)" style="cursor: pointer;">
+          <td>{{ item.latitude }}</td>
+          <td>{{ item.longitude}} </td>
+          <td>{{ item.speed}} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <a routerLink="/vehicle">Go back</a>

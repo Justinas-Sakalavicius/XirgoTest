@@ -1,9 +1,9 @@
 ﻿using XirgoTest.Application.Common.Exceptions;
-using XirgoTest.Application.Vechiles.CreateVechile;
 using FluentAssertions;
 using NUnit.Framework;
 using System.Threading.Tasks;
 using XirgoTest.Domain.Entities;
+using XirgoTest.Application.Vehicles.Commands.CreateVehicle;
 
 namespace Application.IntegrationTests.Vechiles.Commands
 {
@@ -13,7 +13,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public void ShouldRequireMinimumFields()
         {
-            var command = new CreateVechileCommand();
+            var command = new CreateVehicleCommand();
 
             FluentActions.Invoking(() => SendAsync(command))
                 .Should().Throw<ValidationException>();
@@ -22,7 +22,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public async Task ShouldRequireUniqueLicensePlate()
         {
-            await SendAsync(new CreateVechileCommand
+            await SendAsync(new CreateVehicleCommand
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -30,7 +30,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
                 Color = "Silver"
             });
 
-            var command = new CreateVechileCommand
+            var command = new CreateVehicleCommand
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -45,7 +45,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public async Task ShouldCreateVechile()
         {
-            var command = new CreateVechileCommand
+            var command = new CreateVehicleCommand
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -55,7 +55,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
 
             var id = await SendAsync(command);
 
-            var vechile = await FindAsync<Vechile>(id);
+            var vechile = await FindAsync<Vehicle>(id);
 
             vechile.Should().NotBeNull();
             vechile.LicensePlate.Should().Be(command.LicensePlate);

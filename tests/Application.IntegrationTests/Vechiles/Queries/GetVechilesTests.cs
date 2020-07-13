@@ -1,13 +1,7 @@
 ﻿using FluentAssertions;
-using Namotion.Reflection;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using XirgoTest.Application.Vechiles.Queries.GetVechile;
-using XirgoTest.Application.Vechiles.Queries.GetVechileList;
+using XirgoTest.Application.Vehicles.Queries;
 using XirgoTest.Domain.Entities;
 
 namespace Application.IntegrationTests.Vechiles.Queries
@@ -19,7 +13,7 @@ namespace Application.IntegrationTests.Vechiles.Queries
         public async Task ShouldReturnAllVechiles()
         {
             //Arrange
-            await AddAsync(new Vechile
+            await AddAsync(new Vehicle
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -27,21 +21,21 @@ namespace Application.IntegrationTests.Vechiles.Queries
                 Color = "Silver"
             });
 
-            var query = new GetVechilesQuery();
+            var query = new GetAllVehiclesQuery();
 
             //Act
-            VechilesVm result = await SendAsync(query);
+            VehiclesVm result = await SendAsync(query);
 
             //Assert
             result.Should().NotBeNull();
-            result.Vechiles.Should().HaveCount(1);
+            result.Vehicles.Should().HaveCount(1);
         }
 
         [Test]
         public async Task ShouldReturnFirstVechile()
         {
             //Arrange
-            var car = new Vechile
+            var car = new Vehicle
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -50,10 +44,10 @@ namespace Application.IntegrationTests.Vechiles.Queries
             };
             await AddAsync(car);
 
-            var query = new GetVechileByIdQuery { Id = car.Id };
+            var query = new GetVehicleByIdQuery { Id = car.Id };
 
             //Act
-            VechileVm result = await SendAsync(query);
+            VehicleVm result = await SendAsync(query);
 
             //Assert
             result.Should().NotBeNull();

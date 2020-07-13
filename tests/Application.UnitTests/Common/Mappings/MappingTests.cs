@@ -2,9 +2,8 @@
 using NUnit.Framework;
 using System;
 using XirgoTest.Application.Common.Mappings;
-using XirgoTest.Application.VechileDetails.Queries.GetVechileDetails;
-using XirgoTest.Application.Vechiles.Queries.GetVechile;
-using XirgoTest.Application.Vechiles.Queries.GetVechileList;
+using XirgoTest.Application.VehicleDetails.Queries.GetVehicleDetails;
+using XirgoTest.Application.Vehicles.Queries;
 using XirgoTest.Domain.Entities;
 
 namespace XirgoTest.Application.UnitTests.Common.Mappings
@@ -31,9 +30,8 @@ namespace XirgoTest.Application.UnitTests.Common.Mappings
         }
 
         [Test]
-        [TestCase(typeof(Vechile), typeof(VechilesDto))]
-        [TestCase(typeof(Vechile), typeof(VechileDto))]
-        [TestCase(typeof(VechileDetail), typeof(VechileDetailsDto))]
+        [TestCase(typeof(Vehicle), typeof(VehiclesDto))]
+        [TestCase(typeof(VehicleDetail), typeof(VehicleDetailsDto))]
         public void ShouldSupportMappingFromSourceToDestination(Type source, Type destination)
         {
             var instance = Activator.CreateInstance(source);

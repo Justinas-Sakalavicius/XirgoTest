@@ -11,6 +11,11 @@ C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\nunit.engine.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\nunit.engine.api.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.deps.json
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.runtimeconfig.json
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.runtimeconfig.dev.json
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.pdb
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Castle.Core.dll
@@ -95,6 +100,7 @@ C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\nunit.framework.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Respawn.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
@@ -106,6 +112,7 @@ C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
@@ -245,6 +252,8 @@ C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
@@ -261,15 +270,6 @@ C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.AssemblyInfo.cs
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.csproj.CoreCompileInputs.cache
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.csproj.CopyComplete
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.genruntimeconfig.cache
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.deps.json
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.runtimeconfig.json
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.runtimeconfig.dev.json
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.dll
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Application.IntegrationTests.pdb
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.dll
 C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.pdb
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\Respawn.dll
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netstandard2.0\System.Data.SqlClient.dll
-C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
+C:\Users\Justinas\source\repos\XirgoTest\tests\Application.IntegrationTests\obj\Debug\netcoreapp3.1\Application.IntegrationTests.genruntimeconfig.cache

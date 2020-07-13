@@ -6,19 +6,19 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/api/Vechiles": {
+    "/api/Vehicles": {
       "get": {
         "tags": [
-          "Vechiles"
+          "Vehicles"
         ],
-        "operationId": "Vechiles_Get",
+        "operationId": "Vehicles_Get",
         "responses": {
           "200": {
             "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VechilesVm"
+                  "$ref": "#/components/schemas/VehiclesVm"
                 }
               }
             }
@@ -27,15 +27,15 @@
       },
       "post": {
         "tags": [
-          "Vechiles"
+          "Vehicles"
         ],
-        "operationId": "Vechiles_Create",
+        "operationId": "Vehicles_Create",
         "requestBody": {
           "x-name": "command",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateVechileCommand"
+                "$ref": "#/components/schemas/CreateVehicleCommand"
               }
             }
           },
@@ -57,12 +57,12 @@
         }
       }
     },
-    "/api/Vechiles/{id}": {
+    "/api/Vehicles/{id}": {
       "get": {
         "tags": [
-          "Vechiles"
+          "Vehicles"
         ],
-        "operationId": "Vechiles_GetById",
+        "operationId": "Vehicles_GetById",
         "parameters": [
           {
             "name": "id",
@@ -81,7 +81,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VechileVm"
+                  "$ref": "#/components/schemas/VehicleVm"
                 }
               }
             }
@@ -90,9 +90,9 @@
       },
       "put": {
         "tags": [
-          "Vechiles"
+          "Vehicles"
         ],
-        "operationId": "Vechiles_Update",
+        "operationId": "Vehicles_Update",
         "parameters": [
           {
             "name": "id",
@@ -110,7 +110,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateVechileCommand"
+                "$ref": "#/components/schemas/UpdateVehicleCommand"
               }
             }
           },
@@ -133,9 +133,9 @@
       },
       "delete": {
         "tags": [
-          "Vechiles"
+          "Vehicles"
         ],
-        "operationId": "Vechiles_Delete",
+        "operationId": "Vehicles_Delete",
         "parameters": [
           {
             "name": "id",
@@ -163,12 +163,12 @@
         }
       }
     },
-    "/api/VechilesDetails/{id}": {
+    "/api/VehiclesDetails/{id}": {
       "get": {
         "tags": [
-          "VechilesDetails"
+          "VehiclesDetails"
         ],
-        "operationId": "VechilesDetails_GetByVechileId",
+        "operationId": "VehiclesDetails_GetByVehicleId",
         "parameters": [
           {
             "name": "id",
@@ -187,7 +187,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/VechileDetailsVm"
+                  "$ref": "#/components/schemas/VehicleDetailsVm"
                 }
               }
             }
@@ -196,9 +196,9 @@
       },
       "put": {
         "tags": [
-          "VechilesDetails"
+          "VehiclesDetails"
         ],
-        "operationId": "VechilesDetails_Update",
+        "operationId": "VehiclesDetails_Update",
         "parameters": [
           {
             "name": "id",
@@ -216,7 +216,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UpdateVechileDetailsCommand"
+                "$ref": "#/components/schemas/UpdateVehicleDetailsCommand"
               }
             }
           },
@@ -239,9 +239,9 @@
       },
       "delete": {
         "tags": [
-          "VechilesDetails"
+          "VehiclesDetails"
         ],
-        "operationId": "VechilesDetails_Delete",
+        "operationId": "VehiclesDetails_Delete",
         "parameters": [
           {
             "name": "id",
@@ -269,18 +269,18 @@
         }
       }
     },
-    "/api/VechilesDetails": {
+    "/api/VehiclesDetails": {
       "post": {
         "tags": [
-          "VechilesDetails"
+          "VehiclesDetails"
         ],
-        "operationId": "VechilesDetails_Create",
+        "operationId": "VehiclesDetails_Create",
         "requestBody": {
           "x-name": "command",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CreateVechileDetailsCommand"
+                "$ref": "#/components/schemas/CreateVehicleDetailsCommand"
               }
             }
           },
@@ -305,20 +305,20 @@
   },
   "components": {
     "schemas": {
-      "VechilesVm": {
+      "VehiclesVm": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "vechiles": {
+          "vehicles": {
             "type": "array",
             "nullable": true,
             "items": {
-              "$ref": "#/components/schemas/VechilesDto"
+              "$ref": "#/components/schemas/VehiclesDto"
             }
           }
         }
       },
-      "VechilesDto": {
+      "VehiclesDto": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -344,47 +344,21 @@
           }
         }
       },
-      "VechileVm": {
+      "VehicleVm": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "vechile": {
+          "vehicle": {
             "nullable": true,
             "oneOf": [
               {
-                "$ref": "#/components/schemas/VechileDto"
+                "$ref": "#/components/schemas/VehiclesDto"
               }
             ]
           }
         }
       },
-      "VechileDto": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "licensePlate": {
-            "type": "string",
-            "nullable": true
-          },
-          "brandName": {
-            "type": "string",
-            "nullable": true
-          },
-          "modelName": {
-            "type": "string",
-            "nullable": true
-          },
-          "color": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "CreateVechileCommand": {
+      "CreateVehicleCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -406,7 +380,7 @@
           }
         }
       },
-      "UpdateVechileCommand": {
+      "UpdateVehicleCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -432,20 +406,20 @@
           }
         }
       },
-      "VechileDetailsVm": {
+      "VehicleDetailsVm": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
-          "vechileDetails": {
+          "vehicleDetails": {
             "type": "array",
             "nullable": true,
             "items": {
-              "$ref": "#/components/schemas/VechileDetailsDto"
+              "$ref": "#/components/schemas/VehicleDetailsDto"
             }
           }
         }
       },
-      "VechileDetailsDto": {
+      "VehicleDetailsDto": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -467,7 +441,7 @@
           }
         }
       },
-      "CreateVechileDetailsCommand": {
+      "CreateVehicleDetailsCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {
@@ -483,13 +457,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "vechileId": {
+          "vehicleId": {
             "type": "integer",
             "format": "int32"
           }
         }
       },
-      "UpdateVechileDetailsCommand": {
+      "UpdateVehicleDetailsCommand": {
         "type": "object",
         "additionalProperties": false,
         "properties": {

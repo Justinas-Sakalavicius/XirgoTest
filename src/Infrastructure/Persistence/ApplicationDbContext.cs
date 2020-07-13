@@ -15,8 +15,8 @@ namespace XirgoTest.Infrastructure.Persistence
         {
         }
 
-        public DbSet<Vechile> Vechiles { get; set; }
-        public DbSet<VechileDetail> VechileDetails { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<VehicleDetail> VehiclesDetails { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {

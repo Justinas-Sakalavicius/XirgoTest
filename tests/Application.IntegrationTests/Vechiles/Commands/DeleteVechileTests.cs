@@ -1,13 +1,9 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using XirgoTest.Application.Common.Exceptions;
-using XirgoTest.Application.Vechiles.CreateVechile;
-using XirgoTest.Application.Vechiles.DeleteVechile;
+using XirgoTest.Application.Vehicles.Commands.CreateVehicle;
+using XirgoTest.Application.Vehicles.Commands.DeleteVehicle;
 using XirgoTest.Domain.Entities;
 
 namespace Application.IntegrationTests.Vechiles.Commands
@@ -18,7 +14,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public void ShouldRequireValidVechilesId()
         {
-            var command = new DeleteVechileCommand { Id = 99 };
+            var command = new DeleteVehicleCommand { Id = 99 };
 
             FluentActions.Invoking(() =>
                 SendAsync(command)).Should().Throw<NotFoundException>();
@@ -27,7 +23,7 @@ namespace Application.IntegrationTests.Vechiles.Commands
         [Test]
         public async Task ShouldDeleteVechile()
         {
-            var vechileId = await SendAsync(new CreateVechileCommand
+            var vechileId = await SendAsync(new CreateVehicleCommand
             {
                 LicensePlate = "ABC001",
                 BrandName = "Ford",
@@ -35,12 +31,12 @@ namespace Application.IntegrationTests.Vechiles.Commands
                 Color = "Silver"
             });
 
-            await SendAsync(new DeleteVechileCommand
+            await SendAsync(new DeleteVehicleCommand
             {
                 Id = vechileId
             });
 
-            var list = await FindAsync<Vechile>(vechileId);
+            var list = await FindAsync<Vehicle>(vechileId);
 
             list.Should().BeNull();
         }

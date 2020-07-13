@@ -18,7 +18,7 @@ namespace XirgoTest.Infrastructure.Persistence.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("XirgoTest.Domain.Entities.Vechile", b =>
+            modelBuilder.Entity("XirgoTest.Domain.Entities.Vehicle", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,10 +45,10 @@ namespace XirgoTest.Infrastructure.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vechiles");
+                    b.ToTable("Vehicles");
                 });
 
-            modelBuilder.Entity("XirgoTest.Domain.Entities.VechileDetail", b =>
+            modelBuilder.Entity("XirgoTest.Domain.Entities.VehicleDetail", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -77,12 +77,12 @@ namespace XirgoTest.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("VechileId");
 
-                    b.ToTable("VechileDetails");
+                    b.ToTable("VehiclesDetails");
                 });
 
-            modelBuilder.Entity("XirgoTest.Domain.Entities.VechileDetail", b =>
+            modelBuilder.Entity("XirgoTest.Domain.Entities.VehicleDetail", b =>
                 {
-                    b.HasOne("XirgoTest.Domain.Entities.Vechile", "Vechile")
+                    b.HasOne("XirgoTest.Domain.Entities.Vehicle", "Vechile")
                         .WithMany("Details")
                         .HasForeignKey("VechileId")
                         .OnDelete(DeleteBehavior.Cascade)

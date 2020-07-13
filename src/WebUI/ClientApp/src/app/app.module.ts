@@ -7,11 +7,11 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { VechileComponent } from './vechile/vechile.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { VechileDetailComponent } from './vechile-detail/vechile-detail.component';
+import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
 
@@ -20,8 +20,8 @@ import { MapComponent } from './map/map.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    VechileComponent,
-    VechileDetailComponent,
+    VehicleComponent,
+    VehicleDetailComponent,
     MapComponent
   ],
   imports: [
@@ -31,8 +31,8 @@ import { MapComponent } from './map/map.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'vechile', component: VechileComponent },
-      { path: 'vechile/:id', component: VechileDetailComponent },
+      { path: 'vehicle', component: VehicleComponent },
+      { path: 'vehicle/:id', component: VehicleDetailComponent },
       { path: 'map', component: MapComponent }
     ]),
     BrowserAnimationsModule,

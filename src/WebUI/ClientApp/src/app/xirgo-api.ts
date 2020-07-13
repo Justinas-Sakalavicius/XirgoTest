@@ -14,18 +14,18 @@ import { HttpClient, HttpHeaders, HttpResponse, HttpResponseBase } from '@angula
 
 export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 
-export interface IVechilesClient {
-    get(): Observable<VechilesVm>;
-    create(command: CreateVechileCommand): Observable<number>;
-    getById(id: number): Observable<VechileVm>;
-    update(id: number, command: UpdateVechileCommand): Observable<FileResponse>;
+export interface IVehiclesClient {
+    get(): Observable<VehiclesVm>;
+    create(command: CreateVehicleCommand): Observable<number>;
+    getById(id: number): Observable<VehicleVm>;
+    update(id: number, command: UpdateVehicleCommand): Observable<FileResponse>;
     delete(id: number): Observable<FileResponse>;
 }
 
 @Injectable({
     providedIn: 'root'
 })
-export class VechilesClient implements IVechilesClient {
+export class VehiclesClient implements IVehiclesClient {
     private http: HttpClient;
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -35,8 +35,8 @@ export class VechilesClient implements IVechilesClient {
         this.baseUrl = baseUrl ? baseUrl : "";
     }
 
-    get(): Observable<VechilesVm> {
-        let url_ = this.baseUrl + "/api/Vechiles";
+    get(): Observable<VehiclesVm> {
+        let url_ = this.baseUrl + "/api/Vehicles";
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {
@@ -54,14 +54,14 @@ export class VechilesClient implements IVechilesClient {
                 try {
                     return this.processGet(<any>response_);
                 } catch (e) {
-                    return <Observable<VechilesVm>><any>_observableThrow(e);
+                    return <Observable<VehiclesVm>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<VechilesVm>><any>_observableThrow(response_);
+                return <Observable<VehiclesVm>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGet(response: HttpResponseBase): Observable<VechilesVm> {
+    protected processGet(response: HttpResponseBase): Observable<VehiclesVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -72,7 +72,7 @@ export class VechilesClient implements IVechilesClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = VechilesVm.fromJS(resultData200);
+            result200 = VehiclesVm.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -80,11 +80,11 @@ export class VechilesClient implements IVechilesClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<VechilesVm>(<any>null);
+        return _observableOf<VehiclesVm>(<any>null);
     }
 
-    create(command: CreateVechileCommand): Observable<number> {
-        let url_ = this.baseUrl + "/api/Vechiles";
+    create(command: CreateVehicleCommand): Observable<number> {
+        let url_ = this.baseUrl + "/api/Vehicles";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(command);
@@ -135,8 +135,8 @@ export class VechilesClient implements IVechilesClient {
         return _observableOf<number>(<any>null);
     }
 
-    getById(id: number): Observable<VechileVm> {
-        let url_ = this.baseUrl + "/api/Vechiles/{id}";
+    getById(id: number): Observable<VehicleVm> {
+        let url_ = this.baseUrl + "/api/Vehicles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -157,14 +157,14 @@ export class VechilesClient implements IVechilesClient {
                 try {
                     return this.processGetById(<any>response_);
                 } catch (e) {
-                    return <Observable<VechileVm>><any>_observableThrow(e);
+                    return <Observable<VehicleVm>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<VechileVm>><any>_observableThrow(response_);
+                return <Observable<VehicleVm>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetById(response: HttpResponseBase): Observable<VechileVm> {
+    protected processGetById(response: HttpResponseBase): Observable<VehicleVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -175,7 +175,7 @@ export class VechilesClient implements IVechilesClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = VechileVm.fromJS(resultData200);
+            result200 = VehicleVm.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -183,11 +183,11 @@ export class VechilesClient implements IVechilesClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<VechileVm>(<any>null);
+        return _observableOf<VehicleVm>(<any>null);
     }
 
-    update(id: number, command: UpdateVechileCommand): Observable<FileResponse> {
-        let url_ = this.baseUrl + "/api/Vechiles/{id}";
+    update(id: number, command: UpdateVehicleCommand): Observable<FileResponse> {
+        let url_ = this.baseUrl + "/api/Vehicles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -240,7 +240,7 @@ export class VechilesClient implements IVechilesClient {
     }
 
     delete(id: number): Observable<FileResponse> {
-        let url_ = this.baseUrl + "/api/Vechiles/{id}";
+        let url_ = this.baseUrl + "/api/Vehicles/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -289,17 +289,17 @@ export class VechilesClient implements IVechilesClient {
     }
 }
 
-export interface IVechilesDetailsClient {
-    getByVechileId(id: number): Observable<VechileDetailsVm>;
-    update(id: number, command: UpdateVechileDetailsCommand): Observable<FileResponse>;
+export interface IVehiclesDetailsClient {
+    getByVehicleId(id: number): Observable<VehicleDetailsVm>;
+    update(id: number, command: UpdateVehicleDetailsCommand): Observable<FileResponse>;
     delete(id: number): Observable<FileResponse>;
-    create(command: CreateVechileDetailsCommand): Observable<number>;
+    create(command: CreateVehicleDetailsCommand): Observable<number>;
 }
 
 @Injectable({
     providedIn: 'root'
 })
-export class VechilesDetailsClient implements IVechilesDetailsClient {
+export class VehiclesDetailsClient implements IVehiclesDetailsClient {
     private http: HttpClient;
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -309,8 +309,8 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
         this.baseUrl = baseUrl ? baseUrl : "";
     }
 
-    getByVechileId(id: number): Observable<VechileDetailsVm> {
-        let url_ = this.baseUrl + "/api/VechilesDetails/{id}";
+    getByVehicleId(id: number): Observable<VehicleDetailsVm> {
+        let url_ = this.baseUrl + "/api/VehiclesDetails/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -325,20 +325,20 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
         };
 
         return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_ : any) => {
-            return this.processGetByVechileId(response_);
+            return this.processGetByVehicleId(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGetByVechileId(<any>response_);
+                    return this.processGetByVehicleId(<any>response_);
                 } catch (e) {
-                    return <Observable<VechileDetailsVm>><any>_observableThrow(e);
+                    return <Observable<VehicleDetailsVm>><any>_observableThrow(e);
                 }
             } else
-                return <Observable<VechileDetailsVm>><any>_observableThrow(response_);
+                return <Observable<VehicleDetailsVm>><any>_observableThrow(response_);
         }));
     }
 
-    protected processGetByVechileId(response: HttpResponseBase): Observable<VechileDetailsVm> {
+    protected processGetByVehicleId(response: HttpResponseBase): Observable<VehicleDetailsVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -349,7 +349,7 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
             let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-            result200 = VechileDetailsVm.fromJS(resultData200);
+            result200 = VehicleDetailsVm.fromJS(resultData200);
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -357,11 +357,11 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<VechileDetailsVm>(<any>null);
+        return _observableOf<VehicleDetailsVm>(<any>null);
     }
 
-    update(id: number, command: UpdateVechileDetailsCommand): Observable<FileResponse> {
-        let url_ = this.baseUrl + "/api/VechilesDetails/{id}";
+    update(id: number, command: UpdateVehicleDetailsCommand): Observable<FileResponse> {
+        let url_ = this.baseUrl + "/api/VehiclesDetails/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -414,7 +414,7 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
     }
 
     delete(id: number): Observable<FileResponse> {
-        let url_ = this.baseUrl + "/api/VechilesDetails/{id}";
+        let url_ = this.baseUrl + "/api/VehiclesDetails/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
         url_ = url_.replace("{id}", encodeURIComponent("" + id));
@@ -462,8 +462,8 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
         return _observableOf<FileResponse>(<any>null);
     }
 
-    create(command: CreateVechileDetailsCommand): Observable<number> {
-        let url_ = this.baseUrl + "/api/VechilesDetails";
+    create(command: CreateVehicleDetailsCommand): Observable<number> {
+        let url_ = this.baseUrl + "/api/VehiclesDetails";
         url_ = url_.replace(/[?&]$/, "");
 
         const content_ = JSON.stringify(command);
@@ -515,10 +515,10 @@ export class VechilesDetailsClient implements IVechilesDetailsClient {
     }
 }
 
-export class VechilesVm implements IVechilesVm {
-    vechiles?: VechilesDto[] | undefined;
+export class VehiclesVm implements IVehiclesVm {
+    vehicles?: VehiclesDto[] | undefined;
 
-    constructor(data?: IVechilesVm) {
+    constructor(data?: IVehiclesVm) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -529,44 +529,44 @@ export class VechilesVm implements IVechilesVm {
 
     init(_data?: any) {
         if (_data) {
-            if (Array.isArray(_data["vechiles"])) {
-                this.vechiles = [] as any;
-                for (let item of _data["vechiles"])
-                    this.vechiles!.push(VechilesDto.fromJS(item));
+            if (Array.isArray(_data["vehicles"])) {
+                this.vehicles = [] as any;
+                for (let item of _data["vehicles"])
+                    this.vehicles!.push(VehiclesDto.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any): VechilesVm {
+    static fromJS(data: any): VehiclesVm {
         data = typeof data === 'object' ? data : {};
-        let result = new VechilesVm();
+        let result = new VehiclesVm();
         result.init(data);
         return result;
     }
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        if (Array.isArray(this.vechiles)) {
-            data["vechiles"] = [];
-            for (let item of this.vechiles)
-                data["vechiles"].push(item.toJSON());
+        if (Array.isArray(this.vehicles)) {
+            data["vehicles"] = [];
+            for (let item of this.vehicles)
+                data["vehicles"].push(item.toJSON());
         }
         return data; 
     }
 }
 
-export interface IVechilesVm {
-    vechiles?: VechilesDto[] | undefined;
+export interface IVehiclesVm {
+    vehicles?: VehiclesDto[] | undefined;
 }
 
-export class VechilesDto implements IVechilesDto {
+export class VehiclesDto implements IVehiclesDto {
     id?: number;
     licensePlate?: string | undefined;
     brandName?: string | undefined;
     modelName?: string | undefined;
     color?: string | undefined;
 
-    constructor(data?: IVechilesDto) {
+    constructor(data?: IVehiclesDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -585,9 +585,9 @@ export class VechilesDto implements IVechilesDto {
         }
     }
 
-    static fromJS(data: any): VechilesDto {
+    static fromJS(data: any): VehiclesDto {
         data = typeof data === 'object' ? data : {};
-        let result = new VechilesDto();
+        let result = new VehiclesDto();
         result.init(data);
         return result;
     }
@@ -603,7 +603,7 @@ export class VechilesDto implements IVechilesDto {
     }
 }
 
-export interface IVechilesDto {
+export interface IVehiclesDto {
     id?: number;
     licensePlate?: string | undefined;
     brandName?: string | undefined;
@@ -611,10 +611,10 @@ export interface IVechilesDto {
     color?: string | undefined;
 }
 
-export class VechileVm implements IVechileVm {
-    vechile?: VechileDto | undefined;
+export class VehicleVm implements IVehicleVm {
+    vehicle?: VehiclesDto | undefined;
 
-    constructor(data?: IVechileVm) {
+    constructor(data?: IVehicleVm) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -625,87 +625,35 @@ export class VechileVm implements IVechileVm {
 
     init(_data?: any) {
         if (_data) {
-            this.vechile = _data["vechile"] ? VechileDto.fromJS(_data["vechile"]) : <any>undefined;
+            this.vehicle = _data["vehicle"] ? VehiclesDto.fromJS(_data["vehicle"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any): VechileVm {
+    static fromJS(data: any): VehicleVm {
         data = typeof data === 'object' ? data : {};
-        let result = new VechileVm();
+        let result = new VehicleVm();
         result.init(data);
         return result;
     }
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        data["vechile"] = this.vechile ? this.vechile.toJSON() : <any>undefined;
+        data["vehicle"] = this.vehicle ? this.vehicle.toJSON() : <any>undefined;
         return data; 
     }
 }
 
-export interface IVechileVm {
-    vechile?: VechileDto | undefined;
+export interface IVehicleVm {
+    vehicle?: VehiclesDto | undefined;
 }
 
-export class VechileDto implements IVechileDto {
-    id?: number;
+export class CreateVehicleCommand implements ICreateVehicleCommand {
     licensePlate?: string | undefined;
     brandName?: string | undefined;
     modelName?: string | undefined;
     color?: string | undefined;
 
-    constructor(data?: IVechileDto) {
-        if (data) {
-            for (var property in data) {
-                if (data.hasOwnProperty(property))
-                    (<any>this)[property] = (<any>data)[property];
-            }
-        }
-    }
-
-    init(_data?: any) {
-        if (_data) {
-            this.id = _data["id"];
-            this.licensePlate = _data["licensePlate"];
-            this.brandName = _data["brandName"];
-            this.modelName = _data["modelName"];
-            this.color = _data["color"];
-        }
-    }
-
-    static fromJS(data: any): VechileDto {
-        data = typeof data === 'object' ? data : {};
-        let result = new VechileDto();
-        result.init(data);
-        return result;
-    }
-
-    toJSON(data?: any) {
-        data = typeof data === 'object' ? data : {};
-        data["id"] = this.id;
-        data["licensePlate"] = this.licensePlate;
-        data["brandName"] = this.brandName;
-        data["modelName"] = this.modelName;
-        data["color"] = this.color;
-        return data; 
-    }
-}
-
-export interface IVechileDto {
-    id?: number;
-    licensePlate?: string | undefined;
-    brandName?: string | undefined;
-    modelName?: string | undefined;
-    color?: string | undefined;
-}
-
-export class CreateVechileCommand implements ICreateVechileCommand {
-    licensePlate?: string | undefined;
-    brandName?: string | undefined;
-    modelName?: string | undefined;
-    color?: string | undefined;
-
-    constructor(data?: ICreateVechileCommand) {
+    constructor(data?: ICreateVehicleCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -723,9 +671,9 @@ export class CreateVechileCommand implements ICreateVechileCommand {
         }
     }
 
-    static fromJS(data: any): CreateVechileCommand {
+    static fromJS(data: any): CreateVehicleCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new CreateVechileCommand();
+        let result = new CreateVehicleCommand();
         result.init(data);
         return result;
     }
@@ -740,21 +688,21 @@ export class CreateVechileCommand implements ICreateVechileCommand {
     }
 }
 
-export interface ICreateVechileCommand {
+export interface ICreateVehicleCommand {
     licensePlate?: string | undefined;
     brandName?: string | undefined;
     modelName?: string | undefined;
     color?: string | undefined;
 }
 
-export class UpdateVechileCommand implements IUpdateVechileCommand {
+export class UpdateVehicleCommand implements IUpdateVehicleCommand {
     id?: number;
     licensePlate?: string | undefined;
     brandName?: string | undefined;
     modelName?: string | undefined;
     colorName?: string | undefined;
 
-    constructor(data?: IUpdateVechileCommand) {
+    constructor(data?: IUpdateVehicleCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -773,9 +721,9 @@ export class UpdateVechileCommand implements IUpdateVechileCommand {
         }
     }
 
-    static fromJS(data: any): UpdateVechileCommand {
+    static fromJS(data: any): UpdateVehicleCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new UpdateVechileCommand();
+        let result = new UpdateVehicleCommand();
         result.init(data);
         return result;
     }
@@ -791,7 +739,7 @@ export class UpdateVechileCommand implements IUpdateVechileCommand {
     }
 }
 
-export interface IUpdateVechileCommand {
+export interface IUpdateVehicleCommand {
     id?: number;
     licensePlate?: string | undefined;
     brandName?: string | undefined;
@@ -799,10 +747,10 @@ export interface IUpdateVechileCommand {
     colorName?: string | undefined;
 }
 
-export class VechileDetailsVm implements IVechileDetailsVm {
-    vechileDetails?: VechileDetailsDto[] | undefined;
+export class VehicleDetailsVm implements IVehicleDetailsVm {
+    vehicleDetails?: VehicleDetailsDto[] | undefined;
 
-    constructor(data?: IVechileDetailsVm) {
+    constructor(data?: IVehicleDetailsVm) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -813,43 +761,43 @@ export class VechileDetailsVm implements IVechileDetailsVm {
 
     init(_data?: any) {
         if (_data) {
-            if (Array.isArray(_data["vechileDetails"])) {
-                this.vechileDetails = [] as any;
-                for (let item of _data["vechileDetails"])
-                    this.vechileDetails!.push(VechileDetailsDto.fromJS(item));
+            if (Array.isArray(_data["vehicleDetails"])) {
+                this.vehicleDetails = [] as any;
+                for (let item of _data["vehicleDetails"])
+                    this.vehicleDetails!.push(VehicleDetailsDto.fromJS(item));
             }
         }
     }
 
-    static fromJS(data: any): VechileDetailsVm {
+    static fromJS(data: any): VehicleDetailsVm {
         data = typeof data === 'object' ? data : {};
-        let result = new VechileDetailsVm();
+        let result = new VehicleDetailsVm();
         result.init(data);
         return result;
     }
 
     toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
-        if (Array.isArray(this.vechileDetails)) {
-            data["vechileDetails"] = [];
-            for (let item of this.vechileDetails)
-                data["vechileDetails"].push(item.toJSON());
+        if (Array.isArray(this.vehicleDetails)) {
+            data["vehicleDetails"] = [];
+            for (let item of this.vehicleDetails)
+                data["vehicleDetails"].push(item.toJSON());
         }
         return data; 
     }
 }
 
-export interface IVechileDetailsVm {
-    vechileDetails?: VechileDetailsDto[] | undefined;
+export interface IVehicleDetailsVm {
+    vehicleDetails?: VehicleDetailsDto[] | undefined;
 }
 
-export class VechileDetailsDto implements IVechileDetailsDto {
+export class VehicleDetailsDto implements IVehicleDetailsDto {
     id?: number;
     latitude?: number;
     longitude?: number;
     speed?: number;
 
-    constructor(data?: IVechileDetailsDto) {
+    constructor(data?: IVehicleDetailsDto) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -867,9 +815,9 @@ export class VechileDetailsDto implements IVechileDetailsDto {
         }
     }
 
-    static fromJS(data: any): VechileDetailsDto {
+    static fromJS(data: any): VehicleDetailsDto {
         data = typeof data === 'object' ? data : {};
-        let result = new VechileDetailsDto();
+        let result = new VehicleDetailsDto();
         result.init(data);
         return result;
     }
@@ -884,20 +832,20 @@ export class VechileDetailsDto implements IVechileDetailsDto {
     }
 }
 
-export interface IVechileDetailsDto {
+export interface IVehicleDetailsDto {
     id?: number;
     latitude?: number;
     longitude?: number;
     speed?: number;
 }
 
-export class CreateVechileDetailsCommand implements ICreateVechileDetailsCommand {
+export class CreateVehicleDetailsCommand implements ICreateVehicleDetailsCommand {
     latitude?: number;
     longitude?: number;
     speed?: number;
-    vechileId?: number;
+    vehicleId?: number;
 
-    constructor(data?: ICreateVechileDetailsCommand) {
+    constructor(data?: ICreateVehicleDetailsCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -911,13 +859,13 @@ export class CreateVechileDetailsCommand implements ICreateVechileDetailsCommand
             this.latitude = _data["latitude"];
             this.longitude = _data["longitude"];
             this.speed = _data["speed"];
-            this.vechileId = _data["vechileId"];
+            this.vehicleId = _data["vehicleId"];
         }
     }
 
-    static fromJS(data: any): CreateVechileDetailsCommand {
+    static fromJS(data: any): CreateVehicleDetailsCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new CreateVechileDetailsCommand();
+        let result = new CreateVehicleDetailsCommand();
         result.init(data);
         return result;
     }
@@ -927,25 +875,25 @@ export class CreateVechileDetailsCommand implements ICreateVechileDetailsCommand
         data["latitude"] = this.latitude;
         data["longitude"] = this.longitude;
         data["speed"] = this.speed;
-        data["vechileId"] = this.vechileId;
+        data["vehicleId"] = this.vehicleId;
         return data; 
     }
 }
 
-export interface ICreateVechileDetailsCommand {
+export interface ICreateVehicleDetailsCommand {
     latitude?: number;
     longitude?: number;
     speed?: number;
-    vechileId?: number;
+    vehicleId?: number;
 }
 
-export class UpdateVechileDetailsCommand implements IUpdateVechileDetailsCommand {
+export class UpdateVehicleDetailsCommand implements IUpdateVehicleDetailsCommand {
     id?: number;
     latitude?: number;
     longitude?: number;
     speed?: number;
 
-    constructor(data?: IUpdateVechileDetailsCommand) {
+    constructor(data?: IUpdateVehicleDetailsCommand) {
         if (data) {
             for (var property in data) {
                 if (data.hasOwnProperty(property))
@@ -963,9 +911,9 @@ export class UpdateVechileDetailsCommand implements IUpdateVechileDetailsCommand
         }
     }
 
-    static fromJS(data: any): UpdateVechileDetailsCommand {
+    static fromJS(data: any): UpdateVehicleDetailsCommand {
         data = typeof data === 'object' ? data : {};
-        let result = new UpdateVechileDetailsCommand();
+        let result = new UpdateVehicleDetailsCommand();
         result.init(data);
         return result;
     }
@@ -980,7 +928,7 @@ export class UpdateVechileDetailsCommand implements IUpdateVechileDetailsCommand
     }
 }
 
-export interface IUpdateVechileDetailsCommand {
+export interface IUpdateVehicleDetailsCommand {
     id?: number;
     latitude?: number;
     longitude?: number;
